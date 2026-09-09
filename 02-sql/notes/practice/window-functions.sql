@@ -10,3 +10,15 @@ SELECT
         ORDER BY salary DESC
     ) AS salary_rank
 FROM employees;
+-- RANK() practice
+
+SELECT
+    employee_id,
+    employee_name,
+    department,
+    salary,
+    RANK() OVER (
+        PARTITION BY department
+        ORDER BY salary DESC
+    ) AS salary_rank
+FROM employees;
